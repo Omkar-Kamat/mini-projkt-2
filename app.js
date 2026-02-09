@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 app.get("/",(req,res)=>{
-    res.send("Mini Project 2 Running.")
+    res.send("User Management API is Running.")
 })
 
 export default app;
