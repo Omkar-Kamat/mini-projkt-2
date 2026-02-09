@@ -25,3 +25,16 @@ export const createProductService = async (data) => {
   const product = await Product.create(data);
   return product;
 };
+
+export const searchProductsService =async (searchTerm) =>{
+	if(!searchTerm) return [];
+	
+	// return await Product.find({
+	// 	$or: [
+	// 		{name: {$regex: searchTerm, $options: "i"}},
+	// 		{category: {$regex: searchTerm, $options: "i"}}
+	// 	]
+	// })
+
+	return await Product.find({$text:{$search: searchTerm}});
+}

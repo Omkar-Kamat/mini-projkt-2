@@ -22,4 +22,10 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// INDEXING
+productSchema.index({
+  name: "text",
+  category: "text"
+})
+
 export const Product = mongoose.model("Product", productSchema);
